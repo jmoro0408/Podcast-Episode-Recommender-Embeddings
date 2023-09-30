@@ -7,18 +7,13 @@ import chromadb
 import pandas as pd
 import streamlit as st
 
-# TODO add ability to search episodes. search via document txt not title text
-# Need to upload chromadb to aws and pull from there on streamlit 
-
-
-
 st.title("Stuff You Should Know Episode Similarity App")
 st.write(
     """
          This recomendation app was built with natural language processing
-         and word embeddings. 
-         Use the search bar below to find similar episodes. 
-         
+         and word embedings from the [all-MiniLM-L6-v2](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2) 
+         sentence transformer.
+         Use the search bar below to find episodes around a specific topic. 
          Check out more about how this app was built
          [here](https://jmoro0408.github.io/project/podcast-recommender).
          """
@@ -28,21 +23,6 @@ st.write(
 search_string = st.text_input(
     "Find similar episodes - Try 'Fast Food', or 'Airplanes'",
 )
-
-
-
-# with open("episode_titles.txt") as file:
-#     titles = [line.rstrip() for line in file]
-
-
-# Episode search - disabled for npw
-# search_string = st.selectbox(
-#    "Choose episode",
-#    set(titles),
-#    index=None,
-#    placeholder="Select contact method...",
-# )
-
 
 chroma_client = chromadb.PersistentClient(path="db")
 collection = chroma_client.get_collection(name="episodes")
