@@ -44,7 +44,7 @@ search_string = st.text_input(
 # )
 
 
-chroma_client = chromadb.PersistentClient(path=".")
+chroma_client = chromadb.PersistentClient(path="db")
 collection = chroma_client.get_collection(name="episodes")
 
 N_RESULTS = 5
