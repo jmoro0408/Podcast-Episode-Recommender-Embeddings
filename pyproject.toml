@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "podcast-episode-recommender-embeddings"
+version = "0.1.0"
+description = ""
+authors = ["James Moro <james.moro.11@gmail.com>"]
+readme = "README.md"
+packages = [{include = "podcast_episode_recommender_embeddings"}]
+
+[tool.poetry.dependencies]
+python = ">=3.11,<3.13"
+jupyter = "^1.0.0"
+openai = "^0.28.1"
+tiktoken = "^0.5.1"
+python-dotenv = "^1.0.0"
+pandas = "^2.1.1"
+fastparquet = "^2023.8.0"
+sqlalchemy = "^2.0.21"
+chromadb = "^0.4.13"
+psycopg2-binary = "^2.9.7"
+spacy = "^3.6.1"
+gensim = "^4.3.2"
+nltk = "^3.8.1"
+streamlit = "^1.27.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -1,0 +1,8 @@
+/Data
+chroma.sqlite3
+db_params.toml
+scratch.ipynb
+.env
+.venv
+__pycache__/
+.DS_Store
