@@ -71,13 +71,13 @@ def add_to_chroma(documents: list[str], metadata: list[dict], ids: list[str]) ->
     Returns:
         None
     """
-    chroma_client = chromadb.PersistentClient(path=".")
-
-    chroma_client.delete_collection(name="episodes")
-
-    chroma_client.create_collection(
-        name="episodes", metadata={"hnsw:space": "cosine"}  # l2 is the default
-    )
+    chroma_client = chromadb.PersistentClient(path="db")
+    try:
+        chroma_client.delete_collection(name="episodes")
+    except ValueError:
+        chroma_client.create_collection(
+            name="episodes", metadata={"hnsw:space": "cosine"}  # l2 is the default
+        )
 
     collection = chroma_client.get_collection(name="episodes")
     collection.add(documents=documents, metadatas=metadata, ids=ids)
