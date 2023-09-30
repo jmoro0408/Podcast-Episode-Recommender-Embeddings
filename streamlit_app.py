@@ -21,7 +21,7 @@ st.write(
 
 
 search_string = st.text_input(
-    "Find similar episodes - Try 'Fast Food', or 'Airplanes'",
+    "Find similar episodes - Try 'Fast Food', or 'Mystery'",
 )
 
 chroma_client = chromadb.PersistentClient(path="db")
