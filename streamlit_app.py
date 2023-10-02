@@ -15,7 +15,7 @@ st.write(
          sentence transformer.
          Use the search bar below to find episodes around a specific topic. 
          Check out more about how this app was built
-         [here](https://jmoro0408.github.io/project/podcast-recommender).
+         [here](https://github.com/jmoro0408/Podcast-Episode-Recommender-Embeddings).
          """
 )
 
