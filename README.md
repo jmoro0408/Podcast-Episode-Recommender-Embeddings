@@ -57,15 +57,11 @@ The app embeds the search text, and queries the sqlite3 file to return the 5 mos
 I decided to use the cosine distance metric to determine similarity, therefore a lower score corresponds to a better match. 
 
 
-# Bugs and Hurdles
+# Next Steps
 
-I ran into a few issues getting running, mainly around the Streamlit deployment.
-
-1. The ChromaDB library requires access to the sqlite3 file to query, however this file is over the github file size limits. I got around this by using git large file system (LFS) but getting the system up and working was not obvious.
-
-2. The version of sqlite3 included with Streamlit is outdated, and ChromaDB required a newer version. This was solved by adding a `pysqlite3-binary` requirement to my `requirements.txt` file, and by following the advice in [this](https://stackoverflow.com/questions/76958817/streamlit-your-system-has-an-unsupported-version-of-sqlite3-chroma-requires-sq) stack overflow post.
-
-3. Usual streamlit + poetry issues. Streamlit doesnt seem to work nicely with poetry's `pyproject.toml` file. By exporting the toml to "normal" `requirements.txt` seemed to get Streamlit up and running. 
+1. Move away from ChromaDB to a vectordb thay supports hybrid search (Qdrant, weaviate etc). I've seen big improvements in other retrieval tasks when leveraging BM25 with embedding similarity. 
+2. Refactor folder structure (it's a bit of a mess right now)
+3. Add metrics
 
 
 ---
