@@ -62,6 +62,7 @@ I decided to use the cosine distance metric to determine similarity, therefore a
 1. Move away from ChromaDB to a vectordb thay supports hybrid search (Qdrant, weaviate etc). I've seen big improvements in other retrieval tasks when leveraging BM25 with embedding similarity. 
 2. Refactor folder structure (it's a bit of a mess right now)
 3. Add metrics
+4. Try fine-tuned embeddings. I think hybrid search will improve the model the most, but fine tuned embeddings should help improve it too. 
 
 
 ---
